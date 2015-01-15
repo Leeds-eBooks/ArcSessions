@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="home">
+  <input class="search">
+  <p class="list-controls">Sort by: <span rv-on-click="sort_date">date</span> <span rv-on-click="sort_poet">poet</span></p>
+
+  <ul class="post-list">
+    {% for video in site.data.videos %}
+      <li>
+        <div class="mugshot" style="background-image: url(/images/poets/{{ video.firstName }}-{{ video.lastName | replace:' ','%20' }}.jpg)"></div>
+        <div class="video">
+          <div class="youtube" id="{{video.id}}" style="background-image:url(/images/Arc-play-white.png)"></div>
+          <span class="post-meta"><a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank"><span class="poet">{{video.firstName}} {{video.lastName}}</span> ({{video.duration}})</a></span>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
