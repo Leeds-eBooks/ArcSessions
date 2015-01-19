@@ -21,14 +21,17 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+html {
+  background-color: $background-color;
+}
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
     color: $text-color;
-    background-color: $background-color;
-    background-image: url(/images/skewed_print.png);
+    // background-color: $background-color;
+    // background-image: $background-image;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -102,12 +105,12 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: $brand-color;
     }
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        // text-decoration: underline;
     }
 }
 
@@ -117,8 +120,8 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    color: grey;
+    border-left: 4px solid grey;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -137,7 +140,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid grey;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -163,12 +166,13 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 10));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 10));
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    padding-right: $spacing-unit * 5;
+    padding-left: $spacing-unit * 5;
+    @include dark-bg;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
@@ -177,6 +181,13 @@ pre {
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
+}
+.site-header .wrapper {
+  padding-top: $spacing-unit;
+}
+.page-content .wrapper {
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
 }
 
 
@@ -207,7 +218,7 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: grey;
         }
     }
 }

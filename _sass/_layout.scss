@@ -6,21 +6,26 @@
     // border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
+    // background-color: $background-color;
+    // background-image: $body-bg;
+
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
 .site-title {
-    font-size: 26px;
-    line-height: 56px;
+    font-family: $special-font;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 66px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
+    // &,
+    // &:visited {
+    //     color: $grey-color-dark;
+    // }
 }
 
 .site-nav {
@@ -32,7 +37,7 @@
     }
 
     .page-link {
-        color: $text-color;
+        // color: $text-color;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
@@ -46,9 +51,11 @@
         top: 9px;
         right: 30px;
         background-color: $background-color;
-        border: 1px solid $grey-color-light;
+        background-image: $body-bg;
+        border: 1px solid grey;
         border-radius: 5px;
         text-align: right;
+        padding-bottom: 8px;
 
         .menu-icon {
             display: block;
@@ -64,7 +71,7 @@
                 height: 15px;
 
                 path {
-                    fill: $grey-color-dark;
+                    fill: black;
                 }
             }
         }
@@ -93,7 +100,9 @@
  */
 .site-footer {
     // border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+    // padding: $spacing-unit 0;
+    // background-color: $background-color;
+    // background-image: $body-bg;
 }
 
 .footer-heading {
@@ -109,7 +118,7 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: $text-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
@@ -162,14 +171,38 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    background-color: #A52A2A;
+    background-image: $body-bg;
 }
 
 .home {
+  padding: $spacing-unit * 2 0 $spacing-unit;
   text-align: center;
+
+  input.search {
+    font-family: inherit;
+    text-align: center;
+    width: 12em;
+    max-width: 100%;
+    padding: 0.3em 0.3em 0;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    border-bottom: 1px solid white;
+    margin-bottom: 0.3em;
+  }
+
+  .list-controls {
+    margin-bottom: $spacing-unit * 2;
+  }
 
   .list-controls > span {
     cursor: pointer;
+    color: $brand-color;
+    &:hover {
+      color: $text-color;
+    }
   }
 }
 
@@ -188,43 +221,46 @@
     width: 100%;
     // vertical-align: top;
     text-align: center;
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit * 3;
     box-shadow: 0 0 0.5em black;
 
     > div.mugshot {
       width: 100%;
       height: 380px;
       // display: inline-block;
-      background-size: 100% auto;
+      background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
 
     > div.video {
-      @include basic-trans(opacity);
       @include abs00;
+      font-size: 1.5em;
       width: 100%;
-      // display: inline-block;
       vertical-align: top;
-      opacity: 0;
 
-      &:hover {
-        opacity: 0.8;
+      > span {
+        font-size: inherit;
+        padding: 0.5em 0;
+        text-shadow: $basic-text-shadow;
+      }
+
+      > div {
+        @include basic-trans(opacity);
+        opacity: 0;
+        &:hover {
+          opacity: 0.8;
+        }
       }
 
       > iframe, > div {
-        @include basic-trans(box-shadow);
         cursor: pointer;
         background-size: 25% auto;
         background-position: center center;
         background-repeat: no-repeat;
         width: 100%;
         height: 380px;
-        margin-bottom: $spacing-unit/4;
-
-        // &:hover {
-        //   box-shadow: 0em 0em 0.6em 0.1em rgba(255,255,255,0.5);
-        // }
+        margin-bottom: $spacing-unit / 2;
       }
     }
   }
@@ -232,7 +268,7 @@
 
 .post-meta {
     font-size: $small-font-size;
-    color: $grey-color;
+    // color: $grey-color;
 }
 
 .post-link {
@@ -245,6 +281,10 @@
 /**
  * Posts
  */
+.post {
+  padding: 4em 0;
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
 }

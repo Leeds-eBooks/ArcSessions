@@ -3,12 +3,12 @@ layout: default
 ---
 
 <div class="home">
-  <input class="search">
-  <p class="list-controls">Sort by: <span rv-on-click="sort_date">date</span> <span rv-on-click="sort_poet">poet</span></p>
+  <input type="search" placeholder="Search" class="search" rv-on-input="filter" rv-on-keyup="filter">
+  <p class="list-controls">Sort by: <span rv-on-click="sort_date">date</span> &bull; <span rv-on-click="sort_poet">poet</span> &bull; <span rv-on-click="sort_duration">duration</span></p>
 
   <ul class="post-list">
     {% for video in site.data.videos %}
-      <li>
+      <li id="{{ video.lastName }}">
         <div class="mugshot" data-echo-background="/images/poets/{{ video.firstName }}-{{ video.lastName | replace:' ','%20' }}.jpg"></div>
         <div class="video">
           <div class="youtube" id="{{video.id}}" style="background-image:url(/images/Arc-play-white.png)"></div>
