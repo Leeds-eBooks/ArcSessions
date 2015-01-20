@@ -7,7 +7,6 @@
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>{{ site.title }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
@@ -46,7 +45,9 @@
       </div>
 
       <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
+        <p class="text" style="display:inline-block;vertical-align:top;">{{ site.description }}</p>
+        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Farcpublications&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=818767354811382" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px; width: 60px;" allowTransparency="true"></iframe>
+        <img src="{{ "/images/ace.png" | prepend: site.baseurl }}" alt="Arts Council England">
       </div>
     </div>
 
