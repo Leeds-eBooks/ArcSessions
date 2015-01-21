@@ -1,0 +1,30 @@
+{
+  "name": "sessions",
+  "version": "0.0.1",
+  "description": "A new site for live poetry.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leeds-eBooks/ArcSessions.git"
+  },
+  "keywords": [
+    "poetry",
+    "video",
+    "film",
+    "live",
+    "reading",
+    "archive"
+  ],
+  "author": "Ben Styles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leeds-eBooks/ArcSessions/issues"
+  },
+  "homepage": "https://github.com/Leeds-eBooks/ArcSessions",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

@@ -101,15 +101,17 @@ window.S={
         sort('duration');
       },
       filter: function(event) {
-        var q=this.value;
+        var q=this.value.toLowerCase();
         function check(el) {
           function finder(v) {return v.el.id===el.lastName;}
           for (var key in el) {
-            if (~el[key].toLowerCase().indexOf(q)) {
-              itemsArray.find(finder).el.style.display="block";
-              return;
-            } else {
-              itemsArray.find(finder).el.style.display="none";
+            if (key!=='id') {
+              if (~el[key].toLowerCase().indexOf(q)) {
+                itemsArray.find(finder).el.style.display="block";
+                return;
+              } else {
+                itemsArray.find(finder).el.style.display="none";
+              }
             }
           }
         }
