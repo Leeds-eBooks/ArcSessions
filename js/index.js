@@ -123,7 +123,7 @@ window.S={
 
     // init() -->
     echo.init({
-      offset: 100,
+      offset: 500,
       throttle: 250,
       unload: false/*,
       callback: function (element, op) {
