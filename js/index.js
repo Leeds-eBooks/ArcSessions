@@ -125,10 +125,10 @@ window.S={
     echo.init({
       offset: 500,
       throttle: 250,
-      unload: false/*,
-      callback: function (element, op) {
-        console.log(element, 'has been', op + 'ed')
-      }*/
+      unload: false,
+      callback: function (el, op) {
+        el.parentNode.style.backgroundImage='none';
+      }
     });
 
     for (var i=0;i<vidEls.length;i++) {
