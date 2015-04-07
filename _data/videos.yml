@@ -75,6 +75,8 @@
 
 - id: "fGhxn-Zv8gk"
   firstName: "Josep"
-  lastName: "Lluís Aguiló"
+  lastName: "Lluis Aguilo"
+  firstNameAccents: "Josep"
+  lastNameAccents: "Lluís Aguiló"
   date:
   duration: "3m 05s"
