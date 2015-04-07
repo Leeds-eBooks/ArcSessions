@@ -32,6 +32,24 @@ module.exports = function(grunt) {
         dest: '_site/js/index.min.js'
       }
     },
+    'string-replace': {
+      'test-js': {
+        files: {
+          '_site/index.html': '_site/index.html',
+        },
+        options: {
+          replacements: [
+            {
+              pattern: '<!-- <script src="/js/index.min.js"></script> -->',
+              replacement: '<script src="/js/index.min.js"></script>'
+            },{
+              pattern: '<script src="/js/index.js"></script>',
+              replacement: '<!-- <script src="/js/index.js"></script> -->'
+            }
+          ]
+        }
+      }
+    },
     // watch: {
     //   gruntfile: {
     //     files: '<%= jshint.gruntfile.src %>',
@@ -56,6 +74,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'ftp-deploy']);
+  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'string-replace', 'ftp-deploy']);
 
 };
