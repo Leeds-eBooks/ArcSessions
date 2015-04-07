@@ -4,29 +4,7 @@
 {% include tap.min.js %}
 {% include rivets.bundled.min.js %}
 {% include echo.min.js %}
-
-if (!Array.prototype.find) {
-  Array.prototype.find = function(predicate) {
-    if (this == null) {
-      throw new TypeError('Array.prototype.find called on null or undefined');
-    }
-    if (typeof predicate !== 'function') {
-      throw new TypeError('predicate must be a function');
-    }
-    var list = Object(this);
-    var length = list.length >>> 0;
-    var thisArg = arguments[1];
-    var value;
-
-    for (var i = 0; i < length; i++) {
-      value = list[i];
-      if (predicate.call(thisArg, value, i, list)) {
-        return value;
-      }
-    }
-    return undefined;
-  };
-}
+{% include polyfills.js %}
 
 window.S={
   videoArray: [
@@ -35,6 +13,8 @@ window.S={
       id: "{{ video.id }}",
       firstName: "{{ video.firstName }}",
       lastName: "{{ video.lastName }}",
+      firstNameAccents: "{{ video.firstNameAccents }}",
+      lastNameAccents: "{{ video.lastNameAccents }}",
       title: "{{ video.title }}",
       date: "{{ video.date }}",
       duration: "{{ video.duration }}"
@@ -100,24 +80,38 @@ window.S={
       sort_duration: function() {
         sort('duration');
       },
+
       filter: function(event) {
-        var q=this.value.toLowerCase();
+        var q=this.value.toLowerCase().trim().split(' ');
+
         function check(el) {
-          function finder(v) {return v.el.id===el.lastName;}
-          for (var key in el) {
-            if (key!=='id') {
-              if (~el[key].toLowerCase().indexOf(q)) {
-                itemsArray.find(finder).el.style.display="block";
-                return;
-              } else {
-                itemsArray.find(finder).el.style.display="none";
+          var shouldShow = [];
+
+          function finder(v) {return v.el.id === el.lastName;}
+
+          for (var i=0;i<q.length;i++) {
+            for (var key in el) {
+              if (key!=='id') {
+                if (~el[key].toLowerCase().indexOf(q[i])) {
+                  shouldShow[i] = true;
+                } else {
+                  shouldShow[i] = shouldShow[i] || false;
+                }
               }
             }
           }
+
+          if (shouldShow.length && shouldShow.every(Boolean)) {
+            itemsArray.find(finder).el.style.display = "block";
+          } else {
+            itemsArray.find(finder).el.style.display = "none";
+          }
         }
+
         for (var i=0;i<S.videoArray.length;i++) {
           check(S.videoArray[i]);
         }
+        echo.render();
       }
     };
 
