@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -39,15 +41,21 @@ module.exports = function(grunt) {
     //     files: '<%= jshint.lib_test.src %>',
     //     tasks: ['jshint:lib_test', 'qunit']
     //   }
-    // }
+    // },
+    'ftp-deploy': {
+      arctour: {
+        auth: {
+          host: 'ftp.arctour.co.uk',
+          port: 21,
+          authKey: 'ben'
+        },
+        src: '_site',
+        dest: '/subdomains/sessions'
+      }
+    }
   });
 
-  // These plugins provide necessary tasks.
-  // grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Default task.
-  grunt.registerTask('default', [/*'concat',*/ 'uglify']);
+  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'ftp-deploy']);
 
 };
