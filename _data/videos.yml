@@ -1,82 +1,82 @@
-- id: "cLceM7jsok8"
-  firstName: ""
-  lastName: "Arc Ventures Tour 2013"
-  title: "Firebirds &amp; Lovers"
-  date:
-  duration: "10m 27s"
+- id: cLceM7jsok8
+  firstName:
+  lastName: Arc Ventures Tour 2013
+  title: Firebirds &amp; Lovers
+  date: 2013-11-01
+  duration: 10m 27s
 
-- id: "X1Il6YTHI1Y"
-  firstName: "Wioletta"
-  lastName: "Greg"
-  location: "North Wales International Poetry Festival, Bangor"
-  date:
-  duration: "13m 39s"
+- id: X1Il6YTHI1Y
+  firstName: Wioletta
+  lastName: Greg
+  location: North Wales International Poetry Festival, Bangor
+  date: 2014-10-14
+  duration: 13m 39s
 
-- id: "7w3IXSO81YE"
-  firstName: ""
-  lastName: "Cheran"
-  title: "About a Bear"
-  date:
-  duration: "2m 00s"
+- id: 7w3IXSO81YE
+  firstName:
+  lastName: Cheran
+  title: About a Bear
+  date: 2013-10-06
+  duration: 2m 00s
 
-- id: "bHAIzWbLGHo"
-  firstName: "Ian"
-  lastName: "Pople"
-  date:
-  duration: "3m 01s"
+- id: bHAIzWbLGHo
+  firstName: Ian
+  lastName: Pople
+  date: 2011-03-22
+  duration: 3m 01s
 
-- id: "rSGLf5vqX0I"
-  firstName: "CK"
-  lastName: "Stead"
+- id: rSGLf5vqX0I
+  firstName: CK
+  lastName: Stead
   date:
-  duration: "1m 27s"
+  duration: 1m 27s
 
-- id: "OIoo1natzU8"
-  firstName: "Jackie"
-  lastName: "Wills"
+- id: OIoo1natzU8
+  firstName: Jackie
+  lastName: Wills
   date:
-  duration: "0m 48s"
+  duration: 0m 48s
 
-- id: "TZslR4yGHcc"
-  firstName: "Katherine"
-  lastName: "Gallagher"
+- id: TZslR4yGHcc
+  firstName: Katherine
+  lastName: Gallagher
   date:
-  duration: "0m 57s"
+  duration: 0m 57s
 
-- id: "dj1taVXCYq8"
-  firstName: "Linda"
-  lastName: "France"
+- id: dj1taVXCYq8
+  firstName: Linda
+  lastName: France
   date:
-  duration: "1m 25s"
+  duration: 1m 25s
 
-- id: "MKEAmRcA0O0"
-  firstName: "Ludwig"
-  lastName: "Steinherr"
+- id: MKEAmRcA0O0
+  firstName: Ludwig
+  lastName: Steinherr
   date:
-  duration: "1m 17s"
+  duration: 1m 17s
 
-- id: "0mDQv0tpZ3A"
-  firstName: "Manuel"
-  lastName: "Forcano"
+- id: 0mDQv0tpZ3A
+  firstName: Manuel
+  lastName: Forcano
   date:
-  duration: "1m 09s"
+  duration: 1m 09s
 
-- id: "QJRBviTixJA"
-  firstName: "Michael"
-  lastName: "Hulse"
+- id: QJRBviTixJA
+  firstName: Michael
+  lastName: Hulse
   date:
-  duration: "0m 28s"
+  duration: 0m 28s
 
-- id: "PXV-IIGCS-Q"
-  firstName: "Jacek"
-  lastName: "Dehnel"
+- id: PXV-IIGCS-Q
+  firstName: Jacek
+  lastName: Dehnel
   date:
-  duration: "1m 13s"
+  duration: 1m 13s
 
-- id: "fGhxn-Zv8gk"
-  firstName: "Josep"
-  lastName: "Lluis Aguilo"
-  firstNameAccents: "Josep"
-  lastNameAccents: "Lluís Aguiló"
+- id: fGhxn-Zv8gk
+  firstName: Josep
+  lastName: Lluis Aguilo
+  firstNameAccents: Josep
+  lastNameAccents: Lluís Aguiló
   date:
-  duration: "3m 05s"
+  duration: 3m 05s
