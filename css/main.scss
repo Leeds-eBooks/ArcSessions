@@ -6,32 +6,34 @@
 
 
 // Our variables
-$base-font-family: 'Fira Sans', sans-serif;
-$special-font:     'Comfortaa', sans-serif;
-$base-font-size:   18px;
-$small-font-size:  $base-font-size * 0.9;
-$base-line-height: 1.5;
+$base-font-family:    'Fira Sans', sans-serif;
+$special-font:        'Comfortaa', sans-serif;
+$base-font-size:      18px;
+$small-font-size:     $base-font-size * 0.9;
+$base-line-height:    1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:        30px;
 
-$text-color:       #ffd454;
-$background-color: #A52A2A;
-$background-image: url(/images/skewed_print.png);
-// $body-bg:          url(/images/classy_fabric.png);
-$body-bg:          none;
-$brand-color:      #79C7F1;
+$text-color:          #ffd454;
+$background-color:    #A52A2A;
+$background-gradient: linear-gradient(to bottom, $background-color, #480a1e);
+// $background-gradient: linear-gradient(to bottom, $background-color, darken($background-color, 20%));
+$background-image:    url(/images/skewed_print.png);
+// $body-bg:             url(/images/classy_fabric.png);
+$body-bg:             none;
+$brand-color:         #79C7F1;
 
-$basic-text-shadow: 0.05em 0.05em 0.1em rgba(255,255,255,0.15);
+$basic-text-shadow:   0.05em 0.05em 0.1em rgba(255,255,255,0.15);
 
 // $grey-color:       #7b968d;
 // $grey-color-light: lighten($grey-color, 40%);
 // $grey-color-dark:  darken($grey-color, 10%);
 
 // Width of the content area
-$content-width:    1300px;
+$content-width:       1300px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-palm:             600px;
+$on-laptop:           800px;
 
 @mixin dark-bg {
   background-image: $background-image;
@@ -62,10 +64,5 @@ $on-laptop:        800px;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout"
-;
+@import "base", "layout";

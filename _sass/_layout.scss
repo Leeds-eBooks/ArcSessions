@@ -170,10 +170,12 @@
 /**
  * Page content
  */
-.page-content {
-    background-color: #A52A2A;
-    background-image: $body-bg;
-}
+// .page-content {
+//     background-color: #A52A2A;
+//     background-image: -webkit-#{$background-gradient};
+//     background-image: $background-gradient;
+//     background-attachment: fixed;
+// }
 
 .home {
   padding: $spacing-unit * 2 0 $spacing-unit;

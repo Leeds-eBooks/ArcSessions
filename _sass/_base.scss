@@ -23,6 +23,9 @@ dl, dd, ol, ul, figure {
  */
 html {
   background-color: $background-color;
+  background-image: -webkit-#{$background-gradient};
+  background-image: $background-gradient;
+  background-attachment: fixed;
 }
 body {
     font-family: $base-font-family;
