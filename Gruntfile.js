@@ -60,6 +60,9 @@ module.exports = function(grunt) {
     //     tasks: ['jshint:lib_test', 'qunit']
     //   }
     // },
+    'jekyll': {
+      'default': {}
+    },
     'ftp-deploy': {
       arctour: {
         auth: {
@@ -74,6 +77,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'string-replace', 'ftp-deploy']);
+  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'string-replace', 'jekyll', 'ftp-deploy']);
 
 };
