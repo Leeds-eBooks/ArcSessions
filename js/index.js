@@ -59,7 +59,7 @@ window.S={
         }
         return 0;
       });
-      console.log(model.array.map(function(v) {return v.obj.lastName;}));
+      // console.log(model.array.map(function(v) {return v.obj.lastName;}));
       sortedEls=model.array.map(function(v) {return v.el;});
       new_ul=list.cloneNode(false);
       for (var i = 0; i < sortedEls.length; i++) {

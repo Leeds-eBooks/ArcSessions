@@ -12,7 +12,12 @@ layout: default
         <div class="mugshot" data-echo-background="/images/poets/1400/{{ video.firstName }}-{{ video.lastName | replace:' ','-' }}.jpg"></div>
         <div class="video">
           <div class="youtube" id="{{video.id}}" style="background-image:url(/images/Arc-play-white.png)"></div>
-          <span class="post-meta"><a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank"><span class="poet">{{video.firstNameAccents or video.firstName}} {{video.lastNameAccents or video.lastName}}</span> ({{video.duration}})</a></span>
+          <span class="post-meta">
+            <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+              <span class="poet">
+                {% if video.firstNameAccents %}{{video.firstNameAccents}}{% else %}{{video.firstName}}{% endif %}
+                {% if video.lastNameAccents %}{{video.lastNameAccents}}{% else %}{{video.lastName}}{% endif %}
+              </span> ({{video.duration}})</a></span>
         </div>
       </li>
     {% endfor %}
