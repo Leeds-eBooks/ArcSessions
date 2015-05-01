@@ -4,7 +4,14 @@ layout: default
 
 <div class="home">
   <input type="search" placeholder="Search" class="search" rv-on-input="filter" rv-on-keyup="filter">
-  <p class="list-controls">Sort by: <span rv-on-click="sort_date">date</span> &bull; <span rv-on-click="sort_poet">poet</span> &bull; <span rv-on-click="sort_duration">duration</span></p>
+  <p class="list-controls">
+    Sort by:
+    <span rv-on-click="sort_date">date <span class="sort-arrow">&#9652;</span></span>
+    &bull;
+    <span rv-on-click="sort_poet">poet <span class="sort-arrow">&#9652;</span></span>
+    &bull;
+    <span rv-on-click="sort_duration">duration <span class="sort-arrow">&#9652;</span></span>
+  </p>
 
   <ul class="post-list">
     {% for video in site.data.videos %}

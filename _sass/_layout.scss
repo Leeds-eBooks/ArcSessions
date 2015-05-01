@@ -196,13 +196,19 @@
 
   .list-controls {
     margin-bottom: $spacing-unit * 2;
-  }
 
-  .list-controls > span {
-    cursor: pointer;
-    color: $brand-color;
-    &:hover {
-      color: $text-color;
+    .sort-arrow {
+      display: inline-block;
+      -webkit-transition: -webkit-transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    > span {
+      cursor: pointer;
+      color: $brand-color;
+      &:hover {
+        color: $text-color;
+      }
     }
   }
 }
