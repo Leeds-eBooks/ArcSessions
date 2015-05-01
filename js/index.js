@@ -27,6 +27,7 @@ window.S={
         itemsArray=[],
         vidEls=document.getElementsByClassName("youtube"),
         model;
+
     function loadYouTube() {
       var iframe;
       iframe=document.createElement("iframe");
@@ -38,28 +39,40 @@ window.S={
       this.parentNode.replaceChild(iframe, this);
       iframe.parentNode.style.opacity="1";
     }
-    function sort(by) {
-      var pos,sortedEls,new_ul,param=by;
+
+    function sort(by, button, descending) {
+      var pos, sortedEls, new_ul, param = by,
+          sortFirst = descending ? -1 : 1,
+          sortSecond = descending ? 1 : -1;
+
       function convertToSecs(str) {
         var s=str.slice(0,-1),a=s.split('m ');
         a[0]=parseInt(a[0],10);
         a[1]=parseInt(a[1],10);
         return a[0]*60 + a[1];
       }
-      model.array.sort(function(a,b) {
-        var A=a.obj,B=b.obj,aSecs,bSecs;
-        if (param==='duration') {
-          aSecs=convertToSecs(A.duration);
-          bSecs=convertToSecs(B.duration);
-          if (aSecs>bSecs) {return 1;}
-          if (aSecs<bSecs) {return -1;}
+
+      function rotate(el) {
+        var transStr = 'webkitTransform'; // TODO
+        el.style[transStr] = descending ? 'rotate(180deg)' : null;
+      }
+
+      rotate(button.querySelector('.sort-arrow'));
+
+      model.array.sort(function(a, b) {
+        var A = a.obj, B = b.obj, aSecs, bSecs;
+        if (param === 'duration') {
+          aSecs = convertToSecs(A.duration);
+          bSecs = convertToSecs(B.duration);
+          if (aSecs > bSecs) {return sortFirst;}
+          if (aSecs < bSecs) {return sortSecond;}
         } else {
-          if (A[param]>B[param]) {return 1;}
-          if (A[param]<B[param]) {return -1;}
+          if (A[param] > B[param]) {return sortFirst;}
+          if (A[param] < B[param]) {return sortSecond;}
         }
         return 0;
       });
-      // console.log(model.array.map(function(v) {return v.obj.lastName;}));
+
       sortedEls=model.array.map(function(v) {return v.el;});
       new_ul=list.cloneNode(false);
       for (var i = 0; i < sortedEls.length; i++) {
@@ -67,19 +80,28 @@ window.S={
       }
       list.parentNode.replaceChild(new_ul,list);
       list=new_ul;
+      echo.render();
+    }
+
+    function sortClosure(by) {
+      var descending = true;
+      return function(event, scope) {
+        sort(by, event.currentTarget, descending);
+        descending = !descending;
+      };
     }
 
     model={
       array: itemsArray,
-      sort_poet: function() {
-        sort('lastName');
-      },
-      sort_date: function() {
-        sort('date');
-      },
-      sort_duration: function() {
-        sort('duration');
-      },
+      // sort_poet: function(event, scope) {
+      //   sort('lastName', this);
+      // },
+      // sort_date: function(event, scope) {
+      //   sort('date', this);
+      // },
+      // sort_duration: function(event, scope) {
+      //   sort('duration', this);
+      // },
 
       filter: function(event) {
         var q=this.value.toLowerCase().trim().split(' ');
@@ -116,6 +138,10 @@ window.S={
     };
 
     // init() -->
+    model.sort_poet     = sortClosure('lastName');
+    model.sort_date     = sortClosure('date');
+    model.sort_duration = sortClosure('duration');
+
     echo.init({
       offset: 500,
       throttle: 250,
