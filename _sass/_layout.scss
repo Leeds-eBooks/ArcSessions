@@ -201,8 +201,12 @@
 
     .sort-arrow {
       display: inline-block;
-      -webkit-transition: -webkit-transform 0.2s ease-in-out;
-      transition: transform 0.2s ease-in-out;
+      -webkit-transition-property: -webkit-transform, -ms-transform, transform;
+              transition-property: -webkit-transform, -ms-transform, transform;
+      -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+      -webkit-transition-timing-function: ease-in-out;
+              transition-timing-function: ease-in-out;
     }
 
     > span {

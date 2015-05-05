@@ -28,16 +28,26 @@ window.S={
         vidEls=document.getElementsByClassName("youtube"),
         model;
 
+    function stylePrefix(element, property, value) {
+      var prop = property.charAt(0).toUpperCase() + property.substr(1);
+      element.style["webkit" + prop] = value;
+      element.style["moz" + prop] = value;
+      element.style["ms" + prop] = value;
+      element.style["o" + prop] = value;
+    }
+
     function loadYouTube() {
       var iframe;
       iframe=document.createElement("iframe");
-      iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/"+this.id+"?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1");
+      iframe.setAttribute("src",
+        "//www.youtube-nocookie.com/embed/" + this.id +
+        "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1");
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "allowfullscreen");
       iframe.width=this.style.width;
       iframe.height=this.style.height;
       this.parentNode.replaceChild(iframe, this);
-      iframe.parentNode.style.opacity="1";
+      iframe.parentNode.style.opacity = "1";
     }
 
     function sort(by, button, descending) {
@@ -46,18 +56,17 @@ window.S={
           sortSecond = descending ? 1 : -1;
 
       function convertToSecs(str) {
-        var s=str.slice(0,-1),a=s.split('m ');
-        a[0]=parseInt(a[0],10);
-        a[1]=parseInt(a[1],10);
+        var s = str.slice(0,-1), a = s.split('m ');
+        a[0] = parseInt(a[0], 10);
+        a[1] = parseInt(a[1], 10);
         return a[0]*60 + a[1];
       }
 
-      function rotate(el) {
-        var transStr = 'webkitTransform'; // TODO
-        el.style[transStr] = descending ? 'rotate(180deg)' : null;
-      }
-
-      rotate(button.querySelector('.sort-arrow'));
+      stylePrefix(
+        button.querySelector('.sort-arrow'),
+        'transform',
+        descending ? 'rotate(180deg)' : null
+      );
 
       model.array.sort(function(a, b) {
         var A = a.obj, B = b.obj, aSecs, bSecs;
