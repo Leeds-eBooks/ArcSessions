@@ -14,7 +14,8 @@ layout: default
   </p>
 
   <ul class="post-list">
-    {% for video in site.data.videos %}
+    {% assign videos = site.data.videos | sort: 'date' %}
+    {% for video in videos reversed %}
       <li id="{{ video.lastName }}" class="loading">
         <div class="mugshot" data-echo-background="/images/poets/1400/{{ video.firstName }}-{{ video.lastName | replace:' ','-' }}.jpg"></div>
         <div class="video">

@@ -8,7 +8,8 @@
 
 window.S={
   videoArray: [
-    {% for video in site.data.videos %}
+    {% assign videos = site.data.videos | sort: 'date' %}
+    {% for video in videos reversed %}
     {
       id: "{{ video.id }}",
       firstName: "{{ video.firstName }}",
@@ -167,7 +168,7 @@ window.S={
       itemsArray.push({el:listItems[j],obj:S.videoArray[j]});
     }
 
-    rivets.bind(document.querySelector('div.home'),model);
+    rivets.bind(document.querySelector('div.home'), model);
   }
 };
 
