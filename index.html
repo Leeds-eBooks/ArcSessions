@@ -17,9 +17,9 @@ layout: default
     {% assign videos = site.data.videos | sort: 'date' %}
     {% for video in videos reversed %}
       <li id="{{ video.lastName }}" class="loading">
-        <div class="mugshot" data-echo-background="/images/poets/1400/{{ video.firstName }}-{{ video.lastName | replace:' ','-' }}.jpg"></div>
+        <div class="mugshot" data-echo-background="{{ site.baseurl }}/images/poets/1400/{{ video.firstName }}-{{ video.lastName | replace:' ','-' }}.jpg"></div>
         <div class="video">
-          <div class="youtube" id="{{video.id}}" style="background-image:url(/images/Arc-play-white.png)"></div>
+          <div class="youtube" id="{{video.id}}" style="background-image:url({{ site.baseurl }}/images/Arc-play-white.png)"></div>
           <span class="post-meta">
             <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
               <span class="poet">

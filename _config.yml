@@ -3,8 +3,8 @@ title: Arc Sessions
 email: ben@arcpublications.co.uk
 description: > # this means to ignore newlines
   A new site for live poetry.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://sessions.arctour.co.uk" # the base hostname & protocol for your site
+baseurl: "/sessions" # the subpath of your site, e.g. /blog/
+url: "http://arcpublications.co.uk" # the base hostname & protocol for your site
 twitter_username: Arc_Poetry
 # github_username:  jekyll
 

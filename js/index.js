@@ -103,15 +103,6 @@ window.S={
 
     model={
       array: itemsArray,
-      // sort_poet: function(event, scope) {
-      //   sort('lastName', this);
-      // },
-      // sort_date: function(event, scope) {
-      //   sort('date', this);
-      // },
-      // sort_duration: function(event, scope) {
-      //   sort('duration', this);
-      // },
 
       filter: function(event) {
         var q=this.value.toLowerCase().trim().split(' ');
