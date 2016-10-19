@@ -156,7 +156,7 @@ window.S = {
         }
         echo.render()
       }
-    };
+    }
 
     // init() -->
     model.sort_poet     = sortClosure('lastName')
@@ -175,6 +175,7 @@ window.S = {
     for (var i = 0; i < vidEls.length; i++) {
       vidEls[i].addEventListener('click', loadYouTube, false)
     }
+
     for (var j = 0; j < listItems.length; j++) {
       itemsArray.push({
         el: listItems[j],
