@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A new site for live poetry.",
   "main": "index.html",
+  "scripts": {
+    "deploy": "grunt"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
