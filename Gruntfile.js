@@ -1,9 +1,7 @@
-/*global module:false*/
 module.exports = function(grunt) {
 
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt)
 
-  // Project configuration.
   grunt.initConfig({
     uglify: {
       dist: {
@@ -29,19 +27,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    'jekyll': {
+    jekyll: {
       'default': {}
     },
     'ftp-deploy': {
-      // arctour: {
-      //   auth: {
-      //     host: 'ftp.arctour.co.uk',
-      //     port: 21,
-      //     authKey: 'ben'
-      //   },
-      //   src: '_site',
-      //   dest: '/subdomains/sessions'
-      // },
       arcpub: {
         auth: {
           host: 'arcpublications.co.uk',
@@ -52,9 +41,7 @@ module.exports = function(grunt) {
         dest: '/sessions'
       }
     }
-  });
+  })
 
-  // Default task.
-  grunt.registerTask('default', [/*'concat',*/ 'uglify', 'string-replace', 'jekyll', 'ftp-deploy']);
-
-};
+  grunt.registerTask('default', ['uglify', 'string-replace', 'jekyll', 'ftp-deploy'])
+}
