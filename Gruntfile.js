@@ -43,5 +43,10 @@ module.exports = function(grunt) {
     }
   })
 
-  grunt.registerTask('default', ['uglify', 'string-replace', 'jekyll', 'ftp-deploy'])
+  grunt.registerTask('default', [
+    'jekyll',
+    'uglify',
+    'string-replace',
+    'ftp-deploy'
+  ])
 }
