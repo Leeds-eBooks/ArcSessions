@@ -43,7 +43,7 @@ window.S = {
 
       iframe.setAttribute(
         "src",
-        "//www.youtube-nocookie.com/embed/" + this.id + "?rel=0&amp;showinfo=0&amp;autoplay=1"
+        "//www.youtube-nocookie.com/embed/" + this.id + "?rel=0&showinfo=0&autoplay=1"
       )
 
       iframe.setAttribute("frameborder", "0")
