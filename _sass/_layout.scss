@@ -282,6 +282,20 @@
   }
 }
 
+// .no-break {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+
+.creator {
+  font-size: 0.5em;
+
+  &:before {
+    content: '© '
+  }
+}
+
 .post-meta {
     font-size: $small-font-size;
     // color: $grey-color;
