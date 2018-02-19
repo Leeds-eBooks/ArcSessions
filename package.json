@@ -4,7 +4,7 @@
   "description": "A new site for live poetry.",
   "main": "index.html",
   "scripts": {
-    "deploy": "grunt"
+    "deploy": "grunt && echo https://www.arcpublications.co.uk/sessions"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -13,14 +13,7 @@
     "type": "git",
     "url": "https://github.com/Leeds-eBooks/ArcSessions.git"
   },
-  "keywords": [
-    "poetry",
-    "video",
-    "film",
-    "live",
-    "reading",
-    "archive"
-  ],
+  "keywords": ["poetry", "video", "film", "live", "reading", "archive"],
   "author": "Ben Styles",
   "license": "ISC",
   "bugs": {
