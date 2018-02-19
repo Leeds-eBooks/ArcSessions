@@ -157,7 +157,9 @@
 
 - id: _bmlw4va1as
   firstName: Timothy
-  lastName: Adès
+  lastName: Ades
+  firstNameAccents: Timothy
+  lastNameAccents: Adès
   location: Institut Français, London
   date: 2017-10-18
   duration: 30m 06s
