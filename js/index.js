@@ -24,11 +24,11 @@ window.S = {
   ],
 
   init: function() {
-    var listItems = document.querySelectorAll('.post-list > li'),
-        list = document.querySelector('.post-list'),
-        itemsArray = [],
-        vidEls = document.getElementsByClassName("youtube"),
-        model;
+    var listItems = document.querySelectorAll('.post-list > li')
+    var list = document.querySelector('.post-list')
+    var itemsArray = []
+    var vidEls = document.getElementsByClassName("youtube")
+    var model
 
     function stylePrefix(element, property, value) {
       var prop = property.charAt(0).toUpperCase() + property.substr(1)
@@ -55,16 +55,16 @@ window.S = {
     }
 
     function sort(by, button, descending) {
-      var pos,
-          sortedEls,
-          new_ul,
-          param = by,
-          sortFirst = descending ? -1 : 1,
-          sortSecond = descending ? 1 : -1;
+      var pos
+      var sortedEls
+      var new_ul
+      var param = by
+      var sortFirst = descending ? -1 : 1
+      var sortSecond = descending ? 1 : -1
 
       function convertToSecs(str) {
-        var s = str.slice(0,-1),
-            a = s.split('m ');
+        var s = str.slice(0,-1)
+        var a = s.split('m ')
 
         a[0] = parseInt(a[0], 10)
         a[1] = parseInt(a[1], 10)
@@ -79,10 +79,10 @@ window.S = {
       )
 
       model.array.sort(function(a, b) {
-        var A = a.obj,
-            B = b.obj,
-            aSecs,
-            bSecs;
+        var A = a.obj
+        var B = b.obj
+        var aSecs
+        var bSecs
 
         if (param === 'duration') {
           aSecs = convertToSecs(A.duration)
@@ -159,8 +159,8 @@ window.S = {
     }
 
     // init() -->
-    model.sort_poet     = sortClosure('lastName')
-    model.sort_date     = sortClosure('date')
+    model.sort_poet = sortClosure('lastName')
+    model.sort_date = sortClosure('date')
     model.sort_duration = sortClosure('duration')
 
     echo.init({
