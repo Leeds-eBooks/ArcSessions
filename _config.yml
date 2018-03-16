@@ -1,14 +1,15 @@
-# Site settings
 title: Arc Sessions
 email: ben@arcpublications.co.uk
-description: > # this means to ignore newlines
-  A new site for live poetry.
+description: A new site for live poetry.
 baseurl: "/sessions" # the subpath of your site, e.g. /blog/
-url: "http://arcpublications.co.uk" # the base hostname & protocol for your site
+url: "https://arcpublications.co.uk"
 twitter_username: Arc_Poetry
-# github_username:  jekyll
 
-# Build settings
-exclude: ["node_modules","package.json","Gruntfile.js"]
+exclude:
+  - node_modules
+  - package.json
+  - Gruntfile.js
+  - src
+
 sass:
   style: compressed
