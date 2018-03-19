@@ -7,9 +7,6 @@ import rapt from 'rapt'
 import {maybe} from 'maybes'
 import videoArray, {type Video} from '../_data/videos.yml'
 
-// eslint-disable-next-line no-sequences
-const logAndReturn = x => (console.log(x), x)
-
 type Model = {
   array: Array<{
     el: HTMLElement,
