@@ -1,0 +1,15 @@
+// @flow
+
+export type Video = $ReadOnly<{|
+  id: string,
+  firstName: string,
+  lastName: string,
+  firstNameAccents: string,
+  lastNameAccents: string,
+  location: string,
+  date: string,
+  duration: string,
+  creator: string,
+|}>
+
+declare module.exports: $ReadOnlyArray<Video>
