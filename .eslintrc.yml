@@ -1,1 +1,7 @@
 extends: rapt
+
+rules:
+  fp/no-let: 0
+  fp/no-mutation: 0
+  fp/no-mutating-assign: 0
+  camelcase: 0
