@@ -9,13 +9,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ya?ml$/,
-        use: 'js-yaml-loader',
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: true,
+          },
+        },
       },
       {
-        test: /\.min\.js$/,
+        test: /\.ya?ml$/,
+        use: 'yml-loader',
+      },
+      {
+        test: [/\.min\.js$/, /echo.js$/],
         use: 'script-loader',
       },
     ],
   },
+  devtool: 'source-map',
 }
