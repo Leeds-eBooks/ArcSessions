@@ -1,2 +1,3 @@
 js
 _includes
+src/*.min.js

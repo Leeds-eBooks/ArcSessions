@@ -10,6 +10,7 @@
     "serve": "jekyll serve",
     "start": "run-p dev serve",
     "transpile": "webpack",
+    "predeploy": "yarn lint && glow !node_modules/*",
     "deploy": "yarn run transpile && jekyll build && grunt",
     "postdeploy": "echo https://www.arcpublications.co.uk/sessions"
   },
