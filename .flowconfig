@@ -1,0 +1,29 @@
+[ignore]
+.*/node_modules/webpack-cli/.*
+
+[include]
+
+[libs]
+
+[lints]
+all=warn
+untyped-import=off
+
+[options]
+include_warnings=true
+munge_underscores=true
+
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.yml
+module.file_ext=.yaml
+module.file_ext=.css
+
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
+
+suppress_type=$Hack
+
+[version]
+^0.68
