@@ -8,8 +8,10 @@ twitter_username: Arc_Poetry
 exclude:
   - node_modules
   - package.json
-  - Gruntfile.js
   - src
+  - webpack.config.js
+  - yarn-error.log
+  - yarn.lock
 
 sass:
   style: compressed

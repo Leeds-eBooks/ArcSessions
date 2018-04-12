@@ -10,9 +10,11 @@
     "serve": "jekyll serve",
     "start": "run-p dev serve",
     "transpile": "webpack",
+    "upload": "yarn run upload-site",
+    "postupload": "echo https://www.arcpublications.co.uk/sessions",
+    "build": "yarn run transpile && jekyll build",
     "predeploy": "yarn lint && glow !node_modules/*",
-    "deploy": "yarn run transpile && jekyll build && grunt",
-    "postdeploy": "echo https://www.arcpublications.co.uk/sessions"
+    "deploy": "yarn build && yarn run upload"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -41,30 +43,36 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
-    "eslint": "^4.19.0",
-    "eslint-config-rapt": "^1.3.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-rapt": "^1.4.1",
+    "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-eslint-comments": "^2.0.2",
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.9.0",
-    "flow-bin": "^0.68.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "flow-bin": "^0.69.0",
     "glow": "^1.2.2",
-    "grunt": "^1.0.2",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-ftp-deploy": "^0.2.0",
-    "grunt-string-replace": "^1.0.0",
-    "load-grunt-tasks": "^3.1.0",
     "npm-run-all": "^4.1.2",
     "script-loader": "^0.7.2",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
+    "upload-site": "^0.0.11",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
     "yml-loader": "^2.1.0"
   },
   "dependencies": {
     "echo-js": "^1.7.3",
     "maybes": "^0.2.3",
-    "rapt": "^1.2.0",
+    "rapt": "^1.2.1",
     "rivets": "^0.9.6"
+  },
+  "upload-site": {
+    "auth": {
+      "host": "arcpublications.co.uk",
+      "port": 21,
+      "authKey": "ben-arcpublications"
+    },
+    "src": "_site",
+    "dest": "/sessions"
   }
 }

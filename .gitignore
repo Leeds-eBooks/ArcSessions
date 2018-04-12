@@ -4,3 +4,4 @@ node_modules
 .ftppass
 js
 yarn-error.log
+.hashes.json

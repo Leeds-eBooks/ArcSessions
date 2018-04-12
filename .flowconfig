@@ -26,4 +26,4 @@ suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
 suppress_type=$Hack
 
 [version]
-^0.68
+^0.69
